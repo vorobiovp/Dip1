@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mimemagicrb/mimemagic.git
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  specs:
+    mimemagic (0.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +69,10 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
@@ -77,8 +88,15 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     erubi (1.10.0)
+    execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -100,8 +118,9 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-darwin)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (5.5.0)
       nio4r (~> 2.0)
@@ -133,6 +152,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     railties (6.1.4.1)
       actionpack (= 6.1.4.1)
       activesupport (= 6.1.4.1)
@@ -143,7 +165,14 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    react-rails (2.6.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     regexp_parser (2.1.1)
+    rexml (3.2.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -167,7 +196,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -200,18 +228,24 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  bootsnap (>= 1.4.4)
-  byebug
+  babel-transpiler (~> 0.7.0)
+  bootsnap (>= 1.4.2)
+  byebug (~> 11.1, >= 11.1.3)
   capybara (>= 3.26)
+  factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  mimemagic!
+  pg (~> 1.2)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  rails-i18n (~> 6.0)
+  react-rails (~> 2.6, >= 2.6.1)
+  rexml (~> 3.2, >= 3.2.5)
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
